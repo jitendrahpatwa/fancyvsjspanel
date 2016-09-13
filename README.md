@@ -1,1 +1,3 @@
-# fancyvsjspanel #an example application
+# fancyvsjspanel 
+#
+an example application

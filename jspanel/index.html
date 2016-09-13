@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>jsPanel</title>
+        <!-- loading jQuery UI css (which theme doesn't matter regarding jsPanel) -->
+        <link rel="stylesheet" href="vendor/jquery-ui-1.12.0.complete/jquery-ui.min.css">
+        <!-- loading jsPanel css -->
+        <link rel="stylesheet" href="source/jquery.jspanel.css">
+    </head>
+    <body>
+    <button id="clss" onclick="clickme()"> Click to get jspanel</button><br>
+    <button id="clss2"> Click to another jspanel</button><br>
+        <!-- Your HTML goes here -->
+
+        <!-- loading jQuery, jQuery UI and jQuery UI Touch Punch -->
+        <script src="vendor/jquery/jquery-2.2.4.min.js"></script>
+        <script src="vendor/jquery-ui-1.12.0.complete/jquery-ui.min.js"></script>
+        <script src="vendor/jquery-ui-touch/jquery.ui.touch-punch.min.js"></script>
+        <!-- loading jsPanel javascript -->
+        <script src="source/jquery.jspanel-compiled.js"></script>
+        <script type="text/javascript">
+        	function clickme(){
+        		$.jsPanel();
+        	}
+        	$("#clss2").click(function(){
+			    $.jsPanel({
+				    headerTitle: "A Basic Example",
+				    theme:       "teal",
+				    content:     "<input type='email' id='email' placeholder='dear user your email id' name='email'>"+
+				    			 "<input type='password' placeholder='password you want to login' name='password'>"+
+				    			 "<button onclick='dosomething()'>Add In jsPanel</button>",
+				    callback:    function () {
+				        //this.content.css("padding", "10px")
+				    }
+				});
+			});
+			function dosomething(){
+				var email = $("#email").val();
+				$.jsPanel().hide();
+				alert("Thanks "+email);
+			}
+        </script>
+    </body>
+</html>

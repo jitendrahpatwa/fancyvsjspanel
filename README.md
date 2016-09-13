@@ -1,0 +1,1 @@
+# fancyvsjspanel #an example application
